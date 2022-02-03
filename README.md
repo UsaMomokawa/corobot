@@ -1,0 +1,2 @@
+# corobot
+Discordで使えるCoCダイスBot
