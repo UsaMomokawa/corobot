@@ -1,6 +1,6 @@
-require('dotenv').config();
-
-const { Client, Intents } = require('discord.js');
+import { roll } from './modules/roll.js';
+import 'dotenv/config';
+import { Client, Intents } from 'discord.js';
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -14,7 +14,17 @@ client.on('interactionCreate', async interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'roll') {
-		await interaction.reply('100');
+		try {
+			const text = interaction.options.getString('input');
+			const response = await roll(text);
+			console.log(response.data.result);
+
+			await interaction.reply(response.data.result);
+		}
+		catch (error) {
+			console.log(error);
+			await interaction.reply('Error');
+		}
 	}
 });
 
