@@ -23,9 +23,14 @@ client.on('interactionCreate', async interaction => {
 		}
 		catch (error) {
 			console.log(error);
-			await interaction.reply('Error');
+			await interaction.reply(error.toString());
 		}
 	}
 });
+
+client.on('disconnect', () => client.logger.log('Bot is disconnecting...', 'warn'))
+	.on('reconnecting', () => client.logger.log('Bot reconnecting...', 'log'))
+	.on('error', (e) => client.logger.log(e, 'error'))
+	.on('warn', (info) => client.logger.log(info, 'warn'));
 
 client.login(process.env.DISCORD_TOKEN);
