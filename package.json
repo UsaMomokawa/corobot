@@ -11,6 +11,7 @@
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
     "eslint": "^8.8.0",
+    "express": "^4.17.2",
     "npm": "^8.4.0"
   },
   "scripts": {
