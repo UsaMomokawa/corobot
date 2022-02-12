@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import axios from 'axios';
 
-const url = `https://discord.com/api/v8/applications/${process.env.DISCORD_CLIENT_ID}/guilds/${process.env.DISCORD_GUILD_ID}/commands`;
+const url = `https://discord.com/api/v8/applications/${process.env.DISCORD_CLIENT_ID}/commands`;
 
 const json = {
 	'name': 'roll',
