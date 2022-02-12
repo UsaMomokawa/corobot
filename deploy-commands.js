@@ -9,7 +9,7 @@ const json = {
 	'options': [
 		{
 			'name': 'input',
-			'description': '目標値を設定して成否判定します',
+			'description': '目標値を設定して成否判定します(例: 1d100<=50)',
 			'required': false,
 			'type': 3,
 		},
