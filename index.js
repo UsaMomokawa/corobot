@@ -17,14 +17,23 @@ client.on('interactionCreate', async interaction => {
 	if (commandName === 'roll') {
 		try {
 			const text = interaction.options.getString('input');
+			await interaction.deferReply();
+
 			const response = await roll(text);
 			console.log(response.data.result);
 
-			await interaction.reply(response.data.result);
+			await interaction.followUp(response.data.result);
 		}
 		catch (error) {
-			console.log(error.toString());
-			await interaction.reply(error.toString());
+			console.log(`[Error] ${error.value}`);
+			if (error.value === null) {
+				await interaction.followUp(
+					':hatched_chick: < トラブルが起きたみたい。直したいので、リンクから報告してほしいぴよ\n https://github.com/UsaMomokawa/corobot',
+				);
+			}
+			else {
+				await interaction.followUp(error.toString());
+			}
 		}
 	}
 });
