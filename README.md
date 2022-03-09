@@ -1,15 +1,23 @@
 # corobot
 
-クトゥルフ神話TRPG(第6版)対応ダイスボット for Discord
+Discord Dice Bot
 
-## 🐤 招待
-
-<a href="https://discord.com/api/oauth2/authorize?client_id=938768579174727691&permissions=2048&scope=bot%20applications.commands"><img src="https://img.shields.io/static/v1?label=Invite%20Me&message=corobot&plastic&color=5865F2&logo=discord"></a>
-
-招待にはサーバー管理権限が必要です
+クトゥルフ神話TRPG(第6版)のロール結果を返します
 
 ## 🤖 機能
 
-corobot をサーバーに招待すると、Slash Command が実行できるようになります
+`/roll`: ダイスロールを実行します
 
-- `/roll`: ダイスロールを実行します
+|command|result|
+|-|-|
+|![](imgs/1d100_1.png)|![](imgs/1d100_2.png)|
+
+引数に目標値を設定できます
+
+|command|result|
+|-|-|
+|![](imgs/1d100_3.png)|![](imgs/1d100_4.png)|
+
+## 🐥 リソース
+
+- API: [UsaMomokawa/corobot-api](https://github.com/UsaMomokawa/corobot-api)
